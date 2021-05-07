@@ -8,6 +8,7 @@ function createWindow () {
     width: 800,
     height: 600,
     webPreferences: {
+      nodeIntegration:true, //node下所有 都可以在渲染进程使用
       preload: path.join(__dirname, 'preload.js')
     }
   })
