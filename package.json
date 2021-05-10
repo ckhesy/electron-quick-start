@@ -2,7 +2,7 @@
   "name": "electron-quick-start",
   "version": "1.0.0",
   "description": "A minimal Electron application",
-  "main": "mainjs/test4.js",
+  "main": "mainjs/test7.js",
   "scripts": {
     "start": "electron ."
   },
