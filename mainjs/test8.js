@@ -4,43 +4,10 @@
 // 想在渲染进程中使用主进程中的模块方法时，可以使用Electron Remote解决在渲染和主进程间的通讯
 
 var electron = require('electron') 
-
-
-const { Menu } = require('electron')
-// var electron = require('electron') 
-// var electron = require('electron') 
-// // node通过fs 获取txt的值
-
-var BrowserWindow = electron.BrowserWindow;
-// https://www.electronjs.org/docs/api/menu
-var template = [
-    {
-        label:'开始1',
-        submenu:[
-            {label:'操作1'},
-            {label:'操作2'}
-        ]
-
-    },
-    {
-        label:'编辑',
-        submenu:[
-            {
-                label:'编辑1',
-                click: () => { 
-                    console.log('click action')
-                },
-            },
-            {label:'编辑2'}
-        ]
-    }
-]
-
-
 // node通过fs 获取txt的值
 var app = electron.app   
 
-// var BrowserWindow = electron.BrowserWindow;
+var BrowserWindow = electron.BrowserWindow;
 
 var mainWindow = null ;
 app.on('ready',()=>{
@@ -57,11 +24,8 @@ app.on('ready',()=>{
         //     openDevTools: true   //不想要控制台直接把这段删除
         //   },
     })
-    var m = Menu.buildFromTemplate(template) // 构建模版才可以使用
-
-    Menu.setApplicationMenu(m)
     mainWindow.webContents.openDevTools({mode:'right'});
-    mainWindow.loadFile('./test2.html')
+    mainWindow.loadFile('./test8.html')
 
     mainWindow.on('closed',()=>{
         mainWindow = null
