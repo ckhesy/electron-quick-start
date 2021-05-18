@@ -9,7 +9,9 @@ function createWindow () {
     height: 600,
     webPreferences: {
       nodeIntegration:true, //node下所有 都可以在渲染进程使用
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js') // 在页面运行其他脚本之前预先加载的指定的脚本
+      // preload脚本是运行在渲染进程中的。再有一点就是，preload脚本中可以调用window工具（渲染进程其实就是起了个浏览器壳子），
+      // preload脚本运行在渲染进程，提前于页面和其他所有js的加载，又能调用Node API；
     }
   })
 
