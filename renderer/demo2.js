@@ -28,3 +28,9 @@ window.addEventListener('contextmenu', (e) => {
     e.preventDefault()
     m.popup({window: remote.getCurrentWindow()})
 })
+
+
+// window.oncontextmenu = function( e) { 
+//     e.preventDefault(); 
+//     m.popup(); 
+// };

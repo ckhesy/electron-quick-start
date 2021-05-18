@@ -28,8 +28,8 @@ app.on('ready',()=>{
     mainWindow.webContents.openDevTools({mode:'right'});
     mainWindow.loadFile('./test9.html')
     // 主进程监听消息
-    ipcMain.on('msg_render2main', (event, arg) => { 
-        console.log(arg) // prints "ping"
+    ipcMain.on('msg_render2main', (event, arg1, arg2) => { 
+        console.log(arg1,arg2) // prints "ping"
         // 主 进程 向渲染进程发送消息
         mainWindow.webContents.send('msg_main2render', {param1: '1111'})
         event.reply('asynchronous-reply', 'pong')
